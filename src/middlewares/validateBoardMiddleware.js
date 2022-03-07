@@ -1,13 +1,6 @@
 import db from "../db.js";
-import boardSchema from "../schemas/boardSchema.js";
 
 export default async function validateBoardMiddleware(req, res, next) {
-  const validate = boardSchema.validate(req.body);
-
-  if (validate.error) {
-    return res.sendStatus(422);
-  }
-
   const { name, stockTotal, priceperday, categoryId } = req.body;
 
   if (parseInt(stockTotal) <= 0 || parseInt(priceperday) <= 0) {
