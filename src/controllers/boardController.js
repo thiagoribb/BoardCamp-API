@@ -33,7 +33,7 @@ export async function postBoard(req, res) {
         image,
         parseInt(stockTotal),
         parseInt(categoryId),
-        parseInt(princePerDay),
+        parseInt(pricePerDay),
       ]
     );
     res.sendStatus(201);
