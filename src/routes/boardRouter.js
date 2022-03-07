@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { getBoards, postBoards } from "../controllers/boardController.js";
+import validateBoardMiddleware from "../middlewares/validateBoardMiddleware.js";
+
+const boardRouter = Router();
+
+boardRouter.get("/games", getBoards);
+boardRouter.post("/games", validateBoardMiddleware, postBoards);
+
+export default boardRouter;

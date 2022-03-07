@@ -22,7 +22,7 @@ export async function getBoards(req, res) {
   }
 }
 
-export async function postBoard(req, res) {
+export async function postBoards(req, res) {
   const { name, image, stockTotal, categoryId, pricePerDay } = req.body;
 
   try {
